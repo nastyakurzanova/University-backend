@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Список заказов{% endblock %}
+
+{% block content %}
+<ul>
+    <div class="background">
+    <div class="order-text">Аудитории МГТУ{{ data.id }}</div> </div>
+    {% for order in data.orders %}
+    <div class="order-text">    {% include 'order_element.html' with element=order %}</div>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+
+</ul>
+<form action="sendText" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="text" type="text"><br><br>
+    <input type="submit" value="Submit" >
+</form>
+{% endblock %}
