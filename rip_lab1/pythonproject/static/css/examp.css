@@ -1,10 +1,40 @@
 .order-text {
-    font-size: 40px;
+    font-size: 110px;
     color: #4D3A23;
+    vertical-align: middle;
+    display: flex;
+    background-color: #FFE3A7;
   }
-.order-nicetext{
+.order-listtext{
+  font-size: 60px;
   color: #BD7722;
+  text-align: center;
+  background-color: #FFFFF0;
 }
+.container {  
+  display: flex;  
+  flex-direction: column;
+}
+
 .background{
-  background-color: #FFE3A7;
+  width: 1920px; /* Ширина изображения background: url(image.jpg); */
+  height: 1000px; /* Высота изображения */
+  background: url(https://glamours.name/uploads/posts/2022-02/1644907212_78-glamours-name-p-fon-svadebnii-nezhnii-krasivo-foto-85.jpg); /* Прописываем путь к файлу */
+  background-repeat: no-repeat; /* Не повторяем */
+  background-size: cover; /* Размер фона */
+  background-position: center; /* Позиция картинкипо центру */
+}
+.backgrounds{
+  width: 1920px; /* Ширина изображения background: url(image.jpg); */
+  height: 1000px; /* Высота изображения */
+  background: url(https://sopranoclub.ru/images/110-krasivyh-fonov-s-derevom/file45103.jpg); /* Прописываем путь к файлу */
+  background-repeat: no-repeat; /* Не повторяем */
+  background-size: cover; /* Размер фона */
+  background-position: center; /* Позиция картинкипо центру */
+}
+.block_img {
+  padding: 10%; /* размер картинки */
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
 }

@@ -4,10 +4,10 @@
 
 {% block content %}
 <ul>
-    <div class="background">
-    <div class="order-text">Аудитории МГТУ{{ data.id }}</div> </div>
+    
+    <div class="order-text">Аудитории МГТУ{{ data.id }} <img src="http://fn.bmstu.ru/images/footer_fn.png"/></div> 
     {% for order in data.orders %}
-    <div class="order-text">    {% include 'order_element.html' with element=order %}</div>
+    <div class="order-listtext">  {% include 'order_element.html' with element=order %}</div>
     {% empty %}
         <li>Список пуст</li>
     {% endfor %}
@@ -16,6 +16,6 @@
 <form action="sendText" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input name="text" type="text"><br><br>
-    <input type="submit" value="Submit" >
+    <input type="submit" value="Поиск" >
 </form>
 {% endblock %}

@@ -19,7 +19,7 @@ def GetOrders(request):
 def GetOrder(request, id):
     return render(request, 'order.html', {'data' : {
         'current_date': date.today(),
-        'id': id
+        'id': id,
     }})
 
 def sendText(request):
