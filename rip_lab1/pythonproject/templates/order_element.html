@@ -1,6 +1,19 @@
+{% load static %}
 <div class="order-div" >
-    <a href="{% url 'order_url' element.id %}">{{ element.title }}</a> 
-    <div class="cards" >
-        {{element.src}}
+    <div style=" text-align: center; font-weight: 1000; color: #4D3A23;">  
+        <!-- <button class="button" href="{% url 'order_url' element.id %}"> -->
+    <a text-align: center, href="{% url 'order_url' element.id %}"><div class="button_text">{{ element.title }}</a></div> 
+    <!-- </button> -->
     </div>
+   <!-- <li><img src="https://wiki.bmstu.ru/images/tso/8/84/222_1.jpg"></li> -->
+    <img class="order-img" src="{% static element.src %}" weight=300px height=300px alt="My image">
+    <div class="cards" >
+    <div class="text" >
+        <!-- {{element.src}} -->
+        <br> Корпус: {{element.definition.corpus}} 
+        <br> Инфо: {{element.definition.info}}  
+    
+    </div>
+    </div>
+   
 </div>

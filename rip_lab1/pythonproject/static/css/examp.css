@@ -3,11 +3,16 @@
     color: #4D3A23;
     vertical-align: middle;
     display: flex;
+    text-align: center;
     background-color: #FFE3A7;
+  }
+  .text{
+    font-size: 30px;
+    color: #4D3A23;
   }
   .cards{
     font-size: 45px;
-    background-color: #FFFFF0;
+    background-color: #FFE3A7;
   }
   .button[type="text"]{
     padding: 5px;
@@ -18,16 +23,20 @@
   .button[type="submit"]{
     padding: 5px 10px;
     background-color: #FFE3A7;
-    color:#FFFFF0;
+    color:#FFE3A7;
     border: none;
     border-radius: 3px;
   }
   
-
+a{
+  font-size: 75px;
+  color: #4D3A23;
+  text-decoration: none;
+}
 .order-listtext{
   font-size: 60px;
   text-align: center;
-  background-color: #FFFFF0;
+  background-color: #FFE3A7;
 }
 .container {  
   display: flex;  
@@ -57,15 +66,24 @@
   margin-right: 10px;
 }
 
+.button_text{
+  font-size: 60px;
+  color: #FFE3A7;
+  vertical-align: middle;
+  display: flex;
+  background-color: #FFE3A7;
+}
+
 /*--------------------*/
 .order-div {
-    width: 300px;
-    height: 400px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 550px;
     display: inline-block;
     margin-left: 30px;
     margin-top: 30px;
+    text-align: center;
+    vertical-align: middle;
     transition: transform 0.2s ease-in-out;
-    border-radius: 5px;
-    background-color: white;
+    border-radius:10px;
+    background-color: #FFE3A7;
 }

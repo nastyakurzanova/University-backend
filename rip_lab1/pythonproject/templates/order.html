@@ -5,4 +5,9 @@
 
 {% block content %}
 <div class="order-listtext">Информация о аудитории №{{ data.id }} </div>
+<div class="text" >
+    <!-- {{element.src}} -->
+    <li> Корпус:  {{element.definition.corpus}}</li> 
+    <li>  Инфо: {{element.definition.info}} </li> 
+</div>
 {% endblock %}

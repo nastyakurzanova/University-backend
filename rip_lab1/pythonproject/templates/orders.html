@@ -6,11 +6,11 @@
 <ul>
     <!-- http://fn.bmstu.ru/images/footer_fn.png -->
     <div class="order-text">Аудитории МГТУ{{ data.id }} <img src="http://fn.bmstu.ru/images/footer_fn.png"/></div> 
-   
+    <!-- <img src="{% static element.src %}"/> -->
     <form action="" method="get">
         <!-- {% csrf_token %} -->
         <input id="text" name="sub" type="text" value="{{data.query}}"><br><br>
-    <input type="submit" value="Поиск" >
+     <input type="submit" value="Поиск" >
     </form>
 
     {% for order in data.orders %}
