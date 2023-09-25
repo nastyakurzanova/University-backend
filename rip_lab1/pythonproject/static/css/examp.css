@@ -5,6 +5,10 @@
     display: flex;
     background-color: #FFE3A7;
   }
+  .cards{
+    font-size: 45px;
+    background-color: #FFFFF0;
+  }
   .button[type="text"]{
     padding: 5px;
     border:1px solid #FFE3A7;
