@@ -51,14 +51,7 @@ a{
   background-size: cover; /* Размер фона */
   background-position: center; /* Позиция картинкипо центру */
 }
-.backgrounds{
-  width: 1920px; /* Ширина изображения background: url(image.jpg); */
-  height: 1000px; /* Высота изображения */
-  background: url(https://sopranoclub.ru/images/110-krasivyh-fonov-s-derevom/file45103.jpg); /* Прописываем путь к файлу */
-  background-repeat: no-repeat; /* Не повторяем */
-  background-size: cover; /* Размер фона */
-  background-position: center; /* Позиция картинкипо центру */
-}
+
 .block_img {
   padding: 10%; /* размер картинки */
   position: relative;
@@ -76,14 +69,14 @@ a{
 
 /*--------------------*/
 .order-div {
-    width: 350px;
-    height: 550px;
+    width: 455px;
+    height: 450px;
     display: inline-block;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
     text-align: center;
     vertical-align: middle;
     transition: transform 0.2s ease-in-out;
-    border-radius:10px;
+    border-radius: 10px;
     background-color: #FFE3A7;
 }
