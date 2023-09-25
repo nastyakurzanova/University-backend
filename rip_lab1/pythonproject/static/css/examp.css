@@ -1,13 +1,27 @@
 .order-text {
-    font-size: 110px;
+    font-size: 105px;
     color: #4D3A23;
     vertical-align: middle;
     display: flex;
     background-color: #FFE3A7;
   }
+  .button[type="text"]{
+    padding: 5px;
+    border:1px solid #FFE3A7;
+    border-radius: 3px;
+  }
+
+  .button[type="submit"]{
+    padding: 5px 10px;
+    background-color: #FFE3A7;
+    color:#FFFFF0;
+    border: none;
+    border-radius: 3px;
+  }
+  
+
 .order-listtext{
   font-size: 60px;
-  color: #BD7722;
   text-align: center;
   background-color: #FFFFF0;
 }
@@ -37,4 +51,17 @@
   position: relative;
   overflow: hidden;
   margin-right: 10px;
+}
+
+/*--------------------*/
+.order-div {
+    width: 300px;
+    height: 400px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 30px;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 5px;
+    background-color: white;
 }

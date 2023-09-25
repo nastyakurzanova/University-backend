@@ -1,1 +1,6 @@
-<li> <a href="{% url 'order_url' element.id %}">{{ element.title }}</a> </li>
+<div class="order-div" >
+    <a href="{% url 'order_url' element.id %}">{{ element.title }}</a> 
+    <div class="order-text" >
+        {{element.src}}
+    </div>
+</div>
