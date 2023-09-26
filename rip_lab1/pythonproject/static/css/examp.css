@@ -4,12 +4,15 @@
     vertical-align: middle;
     display: flex;
     text-align: center;
-    background-color: #FFE3A7;
+    background-color: #f4e0b59b;
   }
   .text{
     font-size: 30px;
     color: #4D3A23;
+    background-color: #f4e0b59b;
   }
+
+  
   .cards{
     font-size: 45px;
     background-color: #FFE3A7;
@@ -36,6 +39,8 @@ a{
 .order-listtext{
   font-size: 60px;
   text-align: center;
+  text-emphasis-color:#4D3A23;;
+  color: #4D3A23;
   background-color: #FFE3A7;
 }
 .container {  
@@ -78,5 +83,5 @@ a{
     vertical-align: middle;
     transition: transform 0.2s ease-in-out;
     border-radius: 10px;
-    background-color: #FFE3A7;
+    background-color: #f4e0b59b;
 }

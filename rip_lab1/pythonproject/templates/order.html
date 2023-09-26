@@ -1,13 +1,12 @@
 
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Заказ №{{ data.id }}{% endblock %}
+{% block title %}Информация{{data.orders.title}} {% endblock %}
 
 {% block content %}
 <div class="order-listtext">Информация о аудитории №{{ data.id }} </div>
-<div class="text" >
-    <!-- {{element.src}} -->
-    <li> Корпус:  {{element.definition.corpus}}</li> 
-    <li>  Инфо: {{element.definition.info}} </li> 
-</div>
+    <li> Корпус: {{data.orders.title}}  </li> 
+    <li>  Инфо: {{data.orders.definition.info}}</li> 
+    <li>  Картинка: {{data.orders.src}} </li> 
 {% endblock %}

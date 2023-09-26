@@ -33,9 +33,15 @@ info_arr =  [
 #     }})
 
 def GetOrder(request, id):
+    order = next((sub for sub in info_arr if sub["id"] == id), None)
+    if order:
+        print(order["title"])
+    else:
+        print("Not found!")
     return render(request, 'order.html', {'data' : {
         'current_date': date.today(),
         'id': id,
+        'orders': order,
     }})
 
 def GetOrders(request):
