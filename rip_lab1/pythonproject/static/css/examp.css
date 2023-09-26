@@ -6,17 +6,35 @@
     text-align: center;
     background-color: #f4e0b59b;
   }
+  
   .text{
+    font-size: 25px;
+    color: #4D3A23;
+    background-color: #f4e0b59b;
+  }
+
+  .text_order{
+    font-size: 25px;
+    color: #4D3A23;
+    background-color: #f4e0b59b;
+    width: 1920px;
+    height: 1000px;
+    background-size: cover;
+    background-position: center;
+    vertical-align: top;
+  }
+
+  .order-list{
     font-size: 30px;
     color: #4D3A23;
     background-color: #f4e0b59b;
   }
 
-  
   .cards{
-    font-size: 45px;
-    background-color: #FFE3A7;
+    font-size: 20px;
+    background-color: #f4e0b59b;
   }
+
   .button[type="text"]{
     padding: 5px;
     border:1px solid #FFE3A7;
@@ -48,40 +66,15 @@ a{
   flex-direction: column;
 }
 
-.background{
-  width: 1920px; /* Ширина изображения background: url(image.jpg); */
-  height: 1000px; /* Высота изображения */
-  background: url(https://glamours.name/uploads/posts/2022-02/1644907212_78-glamours-name-p-fon-svadebnii-nezhnii-krasivo-foto-85.jpg); /* Прописываем путь к файлу */
-  background-repeat: no-repeat; /* Не повторяем */
-  background-size: cover; /* Размер фона */
-  background-position: center; /* Позиция картинкипо центру */
-}
-
-.block_img {
-  padding: 10%; /* размер картинки */
-  position: relative;
-  overflow: hidden;
-  margin-right: 10px;
-}
-
-.button_text{
-  font-size: 60px;
-  color: #FFE3A7;
-  vertical-align: middle;
-  display: flex;
-  background-color: #FFE3A7;
-}
-
 /*--------------------*/
 .order-div {
-    width: 455px;
-    height: 450px;
+    width: 395px;
+    height: 395px;
     display: inline-block;
     margin-left: 20px;
     margin-top: 10px;
     text-align: center;
     vertical-align: middle;
     transition: transform 0.2s ease-in-out;
-    border-radius: 10px;
     background-color: #f4e0b59b;
 }
