@@ -8,8 +8,14 @@
     <div class="order-text">Аудитории МГТУ{{ data.id }} <img src="http://fn.bmstu.ru/images/footer_fn.png"/></div> 
     <form action="" method="get">
         <!-- {% csrf_token %} -->
-    <input id="text" name="sub" type="text" value="{{data.query}}"><br><br>
-     <input type="submit" value="Поиск" >
+        <div class="buttons-container">
+  <input id="text" name="sub" type="text" value="{{data.query}}"><br><br>
+  <div class="buttons-container">
+    <button class="button-arounder">Поиск</button>
+  </div>
+   <!-- <input type="submit" value="Поиск" >  -->
+    </div>
+     
     </form>
 
     {% for order in data.orders %}

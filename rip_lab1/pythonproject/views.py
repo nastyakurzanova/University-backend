@@ -15,6 +15,7 @@ orders_arr = [
             {'corpus': 'Главное здание','price': 3000, 'info': 'Аудитория для лекций по физике'},
 ]
 
+
 info_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','definition': orders_arr[0]},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','definition': orders_arr[1]},
