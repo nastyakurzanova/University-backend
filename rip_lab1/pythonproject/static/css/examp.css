@@ -1,18 +1,18 @@
 .order-text {
     font-size: 105px;
-    color: #4D3A23;
+    color: #8B4513;
     vertical-align: middle;
     display: flex;
     text-align: center;
-    background-color: #f4e0b59b;
+    background-color: #FFF8DC;
   }
   
 
 
   .text_order{
     font-size: 25px;
-    color: #4D3A23;
-    background-color: #f4e0b59b;
+    color: #8B4513;
+    background-color: #FFF8DC;
     width: 1920px;
     height: 1000px;
     background-size: cover;
@@ -22,8 +22,8 @@
 
   .text_big{
     font-size: 60px;
-    color: #4D3A23;
-    background-color: #f2e5c69b;
+    color: #8B4513;
+    background-color: #FFF8DC;
 
   }
   .text{
@@ -31,25 +31,26 @@
   }
   .order-list{
     font-size: 30px;
-    color: #4D3A23;
-    background-color: #f4e0b59b;
+    color: #8B4513;
+    background-color: #FFF8DC;
   }
 
   .cards{
     font-size: 20px;
-    background-color: #f4e0b59b;
+    background-color: #FFEBCD;
+    color: #8B4513;
   }
 
   .button[type="text"]{
     padding: 5px;
-    border:1px solid  #f2e5c69b;
+    border:1px solid  #FFF8DC;
     border-radius: 3px;
   }
 
   .button[type="submit"]{
     padding: 5px 10px;
-    background-color:  #f2e5c69b;
-    color: #f2e5c69b;
+    background-color:  #FFF8DC;
+    color: #FFF8DC;
     border: none;
     border-radius: 3px;
   }
@@ -57,28 +58,28 @@
   .search[type="text"]{
     padding: 5px;
     font-size: 20px;
-    background-color:  #f2e5c69b;
+    background-color:  #FFF8DC;
   }
 
   .search[type="submit"]{
     padding: 5px 10px;
-    background-color:  #f2e5c69b;
-    color:#f2e5c69b;
+    background-color:  #FFF8DC;
+    color:#FFF8DC;
     border: none;
     border-radius: 3px;
   }
 
 a{
   font-size: 75px;
-  color: #4D3A23;
+  color: #8B4513;
   text-decoration: none;
 }
 .order-listtext{
   font-size: 60px;
   text-align: center;
-  text-emphasis-color:#4D3A23;
-  color: #4D3A23;
-  background-color: #FFE3A7;
+  text-emphasis-color:#8B4513;
+  color: #8B4513;
+  background-color: #FFF8DC;
 }
 .container {  
   display: flex;  
@@ -95,16 +96,16 @@ a{
     text-align: center;
     vertical-align: middle;
     transition: transform 0.2s ease-in-out;
-    background-color: #f4e0b59b;
+    background-color: #FFEBCD;
 }
 /*search*/
 
 :root {
   --rad: .7rem;
   --dur: .3s;
-  --color-dark: #4D3A23;
-  --color-light:  #f2e5c69b;
-  --color-brand: #f4e0b59b;
+  --color-dark: #8B4513;
+  --color-light:  #FFF8DC;
+  --color-brand: #FFF8DC;
   --font-fam: 'Lato', sans-serif;
   --height: 5rem;
   --btn-width: 6rem;
@@ -112,7 +113,7 @@ a{
 }
 
 
-body {background: var(#f4e0b59b); display: flex; align-items: center; justify-content: center; min-height: 100vh }
+body {background: var(#FFF8DC); display: flex; align-items: center; justify-content: center; min-height: 100vh }
 html { box-sizing: border-box; height: 100%; font-size: 10px; } *, *::before, *::after { box-sizing: inherit; }
 
 
@@ -126,7 +127,7 @@ input, button {
   height: var(--height);
   font-family: var(--font-fam);
   border: 0;
-  color: var(#f4e0b59b);
+  color: var(#FFF8DC);
   font-size: 1.8rem;
 }
 input[type="search"] {
@@ -170,9 +171,13 @@ label {
    
 /*button*/
 body {
-  background: #f2e5c69b;
+  background: #FFF8DC;
   margin: 0;
   padding: 0;
+}
+
+.color{
+  background: #FFF8DC;
 }
 
 .buttons-container {
@@ -180,23 +185,24 @@ body {
   height: 100px;
   display: flex;
   align-items: center;
-  background: #f2e5c69b
+  background: #FFF8DC;
+  color: #FFEBCD;
  /*  justify-content: center; */
 }
 
 button {
-  background: #4D3A23;
-  border: solid 2px #4D3A23;
+  background: #8B4513;
+  border: solid 2px #8B4513;
   padding: .375em 1.125em;
   font-size: 1rem;
 }
 
 .button-arounder {
   font-size: 2rem;
-  background: #f2e5c69b;
-  color: #4D3A23;
+  background: #FFF8DC;
+  color: #8B4513;
   
-  box-shadow: 0 0px 0px #4D3A23;
+  box-shadow: 0 0px 0px #8B4513;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -217,9 +223,9 @@ button {
 
 .button-arounder:hover,
 .button-arounder:focus {
-  box-shadow: 0 4px 8px #4D3A23;
+  box-shadow: 0 4px 8px #8B4513;
   transform: translateY(-4px);
-  background: #f4e0b59b;
+  background: #FFF8DC;
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
