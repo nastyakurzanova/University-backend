@@ -4,17 +4,6 @@ from django.http import HttpResponse
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
-orders_arr = [
-            {'corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция' },
-            {'corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
-            {'corpus': 'УЛК','price': 8000, 'info': 'Лекционная аудитория'},
-            {'corpus': 'СМ', 'price': 5000,'info': 'аудиториядля лабораторных'},
-            {'corpus': 'Главное здание', 'price': 12000,'info': 'Дом физики. Аудитория для лабораторных' },
-            {'corpus': 'Главное здание', 'price': 15000,'info': 'Аудитория кафедры ИУ5'},
-            {'corpus': 'УЛК', 'price': 4000,'info': 'Аудитория для семинаров'},
-            {'corpus': 'Главное здание','price': 3000, 'info': 'Аудитория для лекций по физике'},
-]
-
 
 info_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
