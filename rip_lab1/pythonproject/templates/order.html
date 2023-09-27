@@ -5,12 +5,14 @@
 {% block title %}Информация{{data.orders.title}} {% endblock %}
 
 {% block content %}
-<div class="order-listtext">Информация о аудитории №{{ data.id }} </div>
-<div class="text_order">   
+<div class="text_big"> 
+Информация о аудитории №{{ data.id }}
+
     <li> Корпус: {{data.orders.definition.corpus}}  </li> 
     <li> Инфо: {{data.orders.definition.info}}</li> 
     <li> Цена: {{data.orders.definition.price}} руб/час</li>
+
     <img class="order-img" src="{% static data.orders.src %}" weight=300px height=300px alt="My image">
 {% endblock %}
-</div>
+
 </div>

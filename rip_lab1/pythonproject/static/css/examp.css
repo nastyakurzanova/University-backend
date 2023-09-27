@@ -7,11 +7,7 @@
     background-color: #f4e0b59b;
   }
   
-  .text{
-    font-size: 25px;
-    color: #4D3A23;
-    background-color: #f4e0b59b;
-  }
+
 
   .text_order{
     font-size: 25px;
@@ -24,6 +20,15 @@
     vertical-align: top;
   }
 
+  .text_big{
+    font-size: 60px;
+    color: #4D3A23;
+    background-color: #f2e5c69b;
+
+  }
+  .text{
+    font-size: 30px;
+  }
   .order-list{
     font-size: 30px;
     color: #4D3A23;
@@ -37,14 +42,14 @@
 
   .button[type="text"]{
     padding: 5px;
-    border:1px solid #FFE3A7;
+    border:1px solid  #f2e5c69b;
     border-radius: 3px;
   }
 
   .button[type="submit"]{
     padding: 5px 10px;
-    background-color: #FFE3A7;
-    color:#FFE3A7;
+    background-color:  #f2e5c69b;
+    color: #f2e5c69b;
     border: none;
     border-radius: 3px;
   }
@@ -52,13 +57,13 @@
   .search[type="text"]{
     padding: 5px;
     font-size: 20px;
-    background-color: #FFE3A7;
+    background-color:  #f2e5c69b;
   }
 
   .search[type="submit"]{
     padding: 5px 10px;
-    background-color: #FFE3A7;
-    color:#FFE3A7;
+    background-color:  #f2e5c69b;
+    color:#f2e5c69b;
     border: none;
     border-radius: 3px;
   }
@@ -71,7 +76,7 @@ a{
 .order-listtext{
   font-size: 60px;
   text-align: center;
-  text-emphasis-color:#4D3A23;;
+  text-emphasis-color:#4D3A23;
   color: #4D3A23;
   background-color: #FFE3A7;
 }
@@ -82,23 +87,90 @@ a{
 
 /*--------------------*/
 .order-div {
-    width: 395px;
-    height: 395px;
+    width: 390px;
+    height: 390px;
     display: inline-block;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
     text-align: center;
     vertical-align: middle;
     transition: transform 0.2s ease-in-out;
     background-color: #f4e0b59b;
 }
+/*search*/
+
+:root {
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #4D3A23;
+  --color-light:  #f2e5c69b;
+  --color-brand: #f4e0b59b;
+  --font-fam: 'Lato', sans-serif;
+  --height: 5rem;
+  --btn-width: 6rem;
+  /* --bez: cubic-bezier(0, 0, 0.43, 1.49); */
+}
 
 
+body {background: var(#f4e0b59b); display: flex; align-items: center; justify-content: center; min-height: 100vh }
+html { box-sizing: border-box; height: 100%; font-size: 10px; } *, *::before, *::after { box-sizing: inherit; }
 
 
+form {
+  position: relative;
+  width: 30rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+}
+input, button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(#f4e0b59b);
+  font-size: 1.8rem;
+}
+input[type="search"] {
+  outline: 0; 
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none; 
+  transition: all var(--dur) var(--bez);
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
+  }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 
+   
+/*button*/
 body {
-  background: #f4e0b59b;
+  background: #f2e5c69b;
   margin: 0;
   padding: 0;
 }
@@ -108,6 +180,7 @@ body {
   height: 100px;
   display: flex;
   align-items: center;
+  background: #f2e5c69b
  /*  justify-content: center; */
 }
 
@@ -120,7 +193,7 @@ button {
 
 .button-arounder {
   font-size: 2rem;
-  background: #FFE3A7;
+  background: #f2e5c69b;
   color: #4D3A23;
   
   box-shadow: 0 0px 0px #4D3A23;
