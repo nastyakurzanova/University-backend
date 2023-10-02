@@ -5,7 +5,7 @@ from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
 # назвать о аудиториях
-info_arr =  [
+room_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
             {'title': '222л', 'id': 222, 'src': 'image/222_1.jpg','corpus': 'УЛК','price': 8000, 'info': 'Лекционная аудитория'},
@@ -23,7 +23,7 @@ info_arr =  [
 #     }})
 # get room
 def GetOrder(request, id):
-    order = next((sub for sub in info_arr if sub["id"] == id), None)
+    order = next((sub for sub in room_arr if sub["id"] == id), None)
     if order:
         print(order["title"])
     else:
@@ -36,16 +36,16 @@ def GetOrder(request, id):
 
 # убрать саб
 def GetOrders(request):
-    input_text = request.GET.get("sub")
+    input_text = request.GET.get("room")
     print(input_text)
     temp_arr = []
-    for i in info_arr:
+    for i in room_arr:
         if input_text is not None:
             if input_text in i['title']:
                 temp_arr.append(i)
         else:
             return render(request, 'orders.html', {'data' : {
-                'orders': info_arr,
+                'orders': room_arr,
                 'query': input_text,
             }})
     return render(request, 'orders.html', {'data' : {
