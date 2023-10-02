@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
-
+# назвать о аудиториях
 info_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
@@ -21,7 +21,7 @@ info_arr =  [
 #         'current_date': date.today(),
 #         'orders': info_arr,
 #     }})
-
+# get room
 def GetOrder(request, id):
     order = next((sub for sub in info_arr if sub["id"] == id), None)
     if order:
@@ -34,6 +34,7 @@ def GetOrder(request, id):
         'orders': order,
     }})
 
+# убрать саб
 def GetOrders(request):
     input_text = request.GET.get("sub")
     print(input_text)
