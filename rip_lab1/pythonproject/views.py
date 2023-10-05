@@ -22,7 +22,7 @@ room_arr =  [
 #         'orders': info_arr,
 #     }})
 # get room
-def GetOrder(request, id):
+def GetRoom(request, id):
     order = next((sub for sub in room_arr if sub["id"] == id), None)
     if order:
         print(order["title"])
@@ -35,7 +35,7 @@ def GetOrder(request, id):
     }})
 
 # убрать саб
-def GetOrders(request):
+def GetRoomSearch(request):
     input_text = request.GET.get("room")
     print(input_text)
     temp_arr = []
