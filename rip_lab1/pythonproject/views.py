@@ -1,10 +1,35 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
+import psycopg2
+python manage.py inspectdb
+from bmstu_lab.models import Book
 
-# назвать о аудиториях
+def bookList(request):
+    return render(request, 'books.html', {'data' : {
+        'current_date': date.today(),
+        'books': Book.objects.all()
+    }})
+
+def GetBook(request, id):
+    return render(request, 'book.html', {'data' : {
+        'current_date': date.today(),
+        'book': Book.objects.filter(id=id)[0]
+    }})
+
+
+conn = psycopg2.connect(dbname="postgres", host="192.168.1.14", user="student", password="root", port="5432")
+
+cursor = conn.cursor()
+ 
+cursor.execute("INSERT INTO public.books (id, name, description) VALUES(1, 'Мастер и Маргарита', 'Крутая книга')")
+ 
+conn.commit()   # реальное выполнение команд sql1
+ 
+cursor.close()
+conn.close()
+
 room_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
@@ -20,8 +45,8 @@ room_arr =  [
 #     return render(request, 'orders.html', {'data' : {
 #         'current_date': date.today(),
 #         'orders': info_arr,
-#     }})
-# get room
+#   }})
+
 def GetRoom(request, id):
     order = next((sub for sub in room_arr if sub["id"] == id), None)
     if order:
@@ -34,7 +59,6 @@ def GetRoom(request, id):
         'orders': order,
     }})
 
-# убрать саб
 def GetRoomSearch(request):
     input_text = request.GET.get("room")
     print(input_text)

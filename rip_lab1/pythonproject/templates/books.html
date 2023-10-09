@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block content %}
+<ul>
+    {% for book in data.books %}
+       {% include 'qw.html' with elem=book %}
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
