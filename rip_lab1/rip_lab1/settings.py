@@ -34,10 +34,10 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'first_db',
+        'NAME': 'postgres',
         'USER': 'student',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': '192.168.48.59',
         'PORT': 5432, # Стандартный порт PostgreSQL
         'OPTIONS': {'charset': 'utf8'},
         'TEST_CHARSET': 'utf8',
@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rip_lab1',
+    'pythonproject'
 ]
 
 MIDDLEWARE = [

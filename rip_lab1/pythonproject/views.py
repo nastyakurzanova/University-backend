@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 import psycopg2
-python manage.py inspectdb
-from bmstu_lab.models import Book
+# from .models import Book
 
 def bookList(request):
     return render(request, 'books.html', {'data' : {
@@ -18,8 +17,8 @@ def GetBook(request, id):
         'book': Book.objects.filter(id=id)[0]
     }})
 
-
-conn = psycopg2.connect(dbname="postgres", host="192.168.1.14", user="student", password="root", port="5432")
+#!!!!!!!!!!!!!!!!
+conn = psycopg2.connect(dbname="postgres", host="192.168.43.88", user="student", password="root", port="5432")
 
 cursor = conn.cursor()
  
