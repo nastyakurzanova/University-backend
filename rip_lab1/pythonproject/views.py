@@ -5,6 +5,23 @@ from datetime import date
 import psycopg2
 # from .models import Book
 
+
+from pythonproject.models import Book
+
+def bookList(request):
+    return render(request, 'books.html', {'data' : {
+        'current_date': date.today(),
+        'books': Book.objects.all()
+    }})
+
+def GetBook(request, id):
+    return render(request, 'book.html', {'data' : {
+        'current_date': date.today(),
+        'book': Book.objects.filter(id=id)[0]
+    }})
+
+
+
 def bookList(request):
     return render(request, 'books.html', {'data' : {
         'current_date': date.today(),
@@ -18,7 +35,7 @@ def GetBook(request, id):
     }})
 
 #!!!!!!!!!!!!!!!!
-conn = psycopg2.connect(dbname="postgres", host="192.168.43.88", user="student", password="root", port="5432")
+conn = psycopg2.connect(dbname="postgres", host="192.168.208.59", user="student", password="root", port="5432")
 
 cursor = conn.cursor()
  

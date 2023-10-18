@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-u#4e70v-uq9f1x@6-l8d%7ggj5!l1aun%6o$9y_nd$ya^1otw4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '192.168.208.59']
 
 
 # Application definition
@@ -37,9 +37,9 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'student',
         'PASSWORD': 'root',
-        'HOST': '192.168.48.59',
+        'HOST': '192.168.208.59',
         'PORT': 5432, # Стандартный порт PostgreSQL
-        'OPTIONS': {'charset': 'utf8'},
+        #'OPTIONS': {'charset': 'utf8'},
         'TEST_CHARSET': 'utf8',
     }
 }
