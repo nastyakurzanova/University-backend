@@ -1,17 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from pythonproject.models import Book
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
-# назвать о аудиториях
 import psycopg2
 
 conn = psycopg2.connect(dbname="postgres", host="localhost", user="student", password="root", port="5432")
 
 cursor = conn.cursor()
  
-cursor.execute("INSERT INTO public.books (id, name, description) VALUES(2, 'Капитанская дочка', 'Крутая книга')")
+cursor.execute("INSERT INTO public.books (id, name, description) VALUES(4, 'Преступление и наказание', 'Крутая книга')")
  
 conn.commit()   # реальное выполнение команд sql1
  
@@ -34,6 +33,19 @@ room_arr =  [
 #         'orders': info_arr,
 #     }})
 # get room
+
+def bookList(request):
+    return render(request, 'books.html', {'data' : {
+        'current_date': date.today(),
+        'books': Book.objects.all()
+    }})
+
+def GetBook(request, id):
+    return render(request, 'book.html', {'data' : {
+        'current_date': date.today(),
+        'book': Book.objects.filter(id=id)[0]
+    }})
+
 def GetRoom(request, id):
     order = next((sub for sub in room_arr if sub["id"] == id), None)
     if order:

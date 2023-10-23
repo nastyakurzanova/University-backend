@@ -27,7 +27,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'books',
+        'USER': 'student',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'DATABASE'
+        'PORT': 5432, # Стандартный порт PostgreSQL
+        'OPTIONS': {'charset': 'utf8'},
+        'TEST_CHARSET': 'utf8',
+    }
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rip_lab1',
+    'pythonproject'
 ]
 
 MIDDLEWARE = [
@@ -79,10 +93,22 @@ WSGI_APPLICATION = 'rip_lab1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'student',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': 5432, # Стандартный порт PostgreSQL
+        # 'OPTIONS': {'charset': 'utf8'},
+        'TEST_CHARSET': 'utf8',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
