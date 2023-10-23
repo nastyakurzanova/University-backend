@@ -5,6 +5,18 @@ from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
 # назвать о аудиториях
+import psycopg2
+
+conn = psycopg2.connect(dbname="postgres", host="localhost", user="student", password="root", port="5432")
+
+cursor = conn.cursor()
+ 
+cursor.execute("INSERT INTO public.books (id, name, description) VALUES(2, 'Капитанская дочка', 'Крутая книга')")
+ 
+conn.commit()   # реальное выполнение команд sql1
+ 
+cursor.close()
+conn.close()
 room_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
