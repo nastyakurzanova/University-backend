@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'books',
+        # 'NAME': 'books',
+        'NAME': 'audiences',
         'USER': 'student',
         'PASSWORD': 'root',
         'HOST': 'localhost',

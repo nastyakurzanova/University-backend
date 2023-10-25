@@ -5,7 +5,7 @@
 
 {% block content %}
 <ul>
-    {% for book in data.books %}
+    {% for book in data.books%}
     {% include 'qw.html' with elem=book %}
  {% empty %}
      <li>Список пуст</li>

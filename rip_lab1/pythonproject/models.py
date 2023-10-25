@@ -1,6 +1,42 @@
 # Create your models here.
 from django.db import models
+#--------
 
+class Users(models.Model):
+    name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    login = models.CharField(max_length=30)
+    password = models.CharField(max_length=30)
+    role = models.CharField()
+    phone = models.FloatField()
+    # who_moderator = models.ForeignKey('Moderators', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+    class Meta:
+        app_label = 'rip_lab1'
+        managed = False
+        db_table = 'users'
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
+    
+
+class Audiences(models.Model):
+    number = models.CharField(max_length=50)
+    price = models.FloatField()
+    image = models.CharField(max_length=100)
+    info = models.FloatField()
+    status = models.CharField(max_length=100)
+    corpus = models.CharField(max_length=50)
+    def __str__(self):
+        return self.number, self.status
+    class Meta:
+        app_label = 'rip_lab1'
+        managed = False
+        db_table = 'audiences' 
+        verbose_name = "Аудитория"
+        verbose_name_plural = "Аудитории"
+
+#--------
 class Book(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=255)

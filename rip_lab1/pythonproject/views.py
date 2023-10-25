@@ -1,21 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from pythonproject.models import Book
+from pythonproject.models import Users
+from pythonproject.models import Audiences
 from datetime import date
 # https://aristos-ekus.ru/image/catalog/seocms/gallery/auditorii-baymana/4_5565dbdc236d9.jpg
 
 import psycopg2
 
-conn = psycopg2.connect(dbname="postgres", host="localhost", user="student", password="root", port="5432")
+# conn = psycopg2.connect(dbname="postgres", host="localhost", user="student", password="root", port="5432")
 
-cursor = conn.cursor()
+# cursor = conn.cursor()
  
-cursor.execute("INSERT INTO public.books (id, name, description) VALUES(4, 'Преступление и наказание', 'Крутая книга')")
+# cursor.execute("INSERT INTO public.books (id, name, description) VALUES(4, 'Преступление и наказание', 'Крутая книга')")
  
-conn.commit()   # реальное выполнение команд sql1
+# conn.commit()   # реальное выполнение команд sql1
  
-cursor.close()
-conn.close()
+# cursor.close()
+# conn.close()
 room_arr =  [
             {'title': '501ю', 'id': 501, 'src': 'image/185.jpg','corpus': 'Главное здание','price': 6000, 'info': 'Большая аудитория для интересных лекция'},
             {'title': '306э', 'id': 306, 'src': 'image/1.jpg','corpus': 'Энерго', 'price': 7500,'info': 'Аудитория для лабораторных'},
@@ -27,52 +29,84 @@ room_arr =  [
             {'title': '323', 'id': 323, 'src': 'image/323.jpg','corpus': 'Главное здание','price': 3000, 'info': 'Аудитория для лекций по физике'},
         ]
 
+
 # def GetOrders(request):
-#     return render(request, 'orders.html', {'data' : {
+#     input_text = request.GET.get("find")
+#     input_filter = request.GET.getlist("manufacturer")
+
+#     orders = Orders.objects.order_by('id')
+#     orders = orders.filter(status="valid")
+
+#     if input_text:
+#         orders = orders.filter(title__icontains = input_text)
+#     else:
+#         input_text = ''
+
+#     if input_filter:
+#         filter_list = [Q(processor__icontains=filter_item) for filter_item in input_filter]
+#         orders = orders.filter(*filter_list)
+#     return render(request, 'orders.html', {'data': {
+#         'orders': orders,
+#         'query': input_text,
+#         'filter_list': input_filter}})
+
+def GetRoomSearch(request):
+    input_filter = request.GET.getlist("manufacturer")
+    input_text = request.GET.get("room")
+    orders = Audiences.objects.all()
+   # orders = orders.filter(status="valid")
+    print(input_text)
+    temp_arr = []
+    return render(request, 'orders.html', {'data' : {
+                'orders': orders,
+                'query': input_text,
+                }})
+    # for i in room_arr:
+    #     if input_text is not None:
+    #         if input_text in i['title']:
+    #             temp_arr.append(i)
+    #     else:
+    #         return render(request, 'orders.html', {'data' : {
+    #             'orders': room_arr,
+    #             'query': input_text,
+    #         }})
+    # return render(request, 'orders.html', {'data' : {
+    #     'orders': temp_arr,
+    #     'query': input_text,
+    # }})
+
+def GetRoom(request):
+    # order = next((sub for sub in room_arr if sub["id"] == id), None)
+    orders = Audiences.objects.all()
+    return render(request, 'order.html', {'data' : {
+        'orders': orders,
+    }})
+
+
+
+
+# def GetRoom(request, id):
+#     order = next((sub for sub in room_arr if sub["id"] == id), None)
+#     if order:
+#         print(order["title"])
+#     else:
+#         print("Not found!")
+#     return render(request, 'order.html', {'data' : {
 #         'current_date': date.today(),
-#         'orders': info_arr,
+#         'id': id,
+#         'orders': order,
 #     }})
-# get room
+
+
+
 
 def bookList(request):
     return render(request, 'books.html', {'data' : {
-        'current_date': date.today(),
-        'books': Book.objects.all()
+        'books': Audiences.objects.all()
     }})
 
 def GetBook(request, id):
     return render(request, 'book.html', {'data' : {
         'current_date': date.today(),
-        'book': Book.objects.filter(id=id)[0]
-    }})
-
-def GetRoom(request, id):
-    order = next((sub for sub in room_arr if sub["id"] == id), None)
-    if order:
-        print(order["title"])
-    else:
-        print("Not found!")
-    return render(request, 'order.html', {'data' : {
-        'current_date': date.today(),
-        'id': id,
-        'orders': order,
-    }})
-
-# убрать саб
-def GetRoomSearch(request):
-    input_text = request.GET.get("room")
-    print(input_text)
-    temp_arr = []
-    for i in room_arr:
-        if input_text is not None:
-            if input_text in i['title']:
-                temp_arr.append(i)
-        else:
-            return render(request, 'orders.html', {'data' : {
-                'orders': room_arr,
-                'query': input_text,
-            }})
-    return render(request, 'orders.html', {'data' : {
-        'orders': temp_arr,
-        'query': input_text,
+        'book': Audiences.objects.filter(id=id)[0]
     }})

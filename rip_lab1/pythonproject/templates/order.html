@@ -2,17 +2,17 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Информация{{data.orders.title}} {% endblock %}
+{% block title %}Информация{{data.orders.number}} {% endblock %}
 
 {% block content %}
 <div class="text_big"> 
-Информация о аудитории №{{ data.id }}
+Информация о аудитории №{{ data.orders.number }}
 
-    <li> Корпус: {{data.orders.corpus}}  </li> 
+    <li> Корпус: {{data.orders.corpus}} </li> 
     <li> Инфо: {{data.orders.info}}</li> 
     <li> Цена: {{data.orders.price}} руб/час</li>
 
-    <img class="order-img" src="{% static data.orders.src %}" weight=300px height=300px alt="My image">
+    <img class="order-img" src="{% static data.orders.image %}" weight=300px height=300px alt="My image">
 {% endblock %}
 
 </div>
