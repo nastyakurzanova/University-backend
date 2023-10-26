@@ -3,16 +3,19 @@
 {% load static %}
 
 {% block title %}Информация{{data.orders.number}} {% endblock %}
-
+{% block navigation %}
+    <button class="button-style" onclick="location.href='/'" > Вернуться назад </button>
+{% endblock %}
 {% block content %}
 <div class="text_big"> 
 Информация о аудитории №{{ data.orders.number }}
-
+<a text-align: center><div class="text">{{ element.number}}
+</a>
     <li> Корпус: {{data.orders.corpus}} </li> 
     <li> Инфо: {{data.orders.info}}</li> 
     <li> Цена: {{data.orders.price}} руб/час</li>
-
-    <img class="order-img" src="{% static data.orders.image %}" weight=300px height=300px alt="My image">
+    
+    <img class="order-img" src="/pythonproject/static/image/1.jpg" weight=300px height=300px alt="My image">
 {% endblock %}
 
 </div>

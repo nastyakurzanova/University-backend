@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from pythonproject.models import Book
 from pythonproject.models import Users
@@ -75,16 +75,22 @@ def GetRoomSearch(request):
     #     'query': input_text,
     # }})
 
-def GetRoom(request):
+def GetRoom(request, id):
     # order = next((sub for sub in room_arr if sub["id"] == id), None)
+    order = Audiences.objects.filter(id=id).first()
     orders = Audiences.objects.all()
+    # clusters = Orders.objects.filter(cluster=order.cluster)
+    input_text = request.GET.get("room")
     return render(request, 'order.html', {'data' : {
-        'orders': orders,
+        'orders': order,
+        'query': input_text,
     }})
 
 
-
-
+def delObject(request, id):
+    # input_text = request.GET.get("delete_order")
+    Audiences.objects.filter(id=id).update(status="deleted")
+    return redirect('/')
 # def GetRoom(request, id):
 #     order = next((sub for sub in room_arr if sub["id"] == id), None)
 #     if order:
