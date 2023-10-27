@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 from pythonproject.models import Book
 from pythonproject.models import Users
 from pythonproject.models import Audiences
@@ -94,13 +96,32 @@ def GetRoom(request, id):
         
     # clusters = Orders.objects.filter(cluster=order.cluster)
     input_text = request.GET.get("room")
-    return render(request, 'order.html', {'data': {'number': 10, 'corpus': 'fghjk'}})
+    return render(request, 'order.html', {'data': {'number': 10, 'corpus': '98 views.py'}})
 
 
 def delObject(request, id):
     # input_text = request.GET.get("delete_order")
     Audiences.objects.filter(id=id).update(status="deleted")
     return redirect('/')
+
+@csrf_exempt
+def DeleteCurrentCargo(request):
+        if request.method == 'POST':
+            
+            id_del = request.POST.get('id_del') #работает,надо только бд прикрутить в all_cargo
+            conn = psycopg2.connect(dbname="postgres", host="127.0.0.1", user="student", password="root", port="5432")
+            cursor = conn.cursor()
+            cursor.execute(f"update audiences set deleted = true where id = {id_del}")
+            conn.commit()   # реальное выполнение команд sql1
+            cursor.close()
+            conn.close()
+        orders = Audiences.objects.all()
+        redirect_url = Audiences.objects.all()
+        redirect_url = reverse('all_cargo') 
+        # Audiences.objects.filter(id=id).update(status="deleted")
+        return HttpResponseRedirect(redirect_url)
+    
+
 # def GetRoom(request, id):
 #     order = next((sub for sub in room_arr if sub["id"] == id), None)
 #     if order:

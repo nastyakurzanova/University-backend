@@ -1,17 +1,27 @@
 {% load static %}
 <div class="order-div" >
-    <div style=" text-align: center; font-weight: 1000; color: #4D3A23;">  
-        <!-- <button class="button" href="{% url 'order_url' element.id %}"> -->
-    <a text-align: center, href="{% url 'order_url' element.number %}"><div class="text">{{ element.number}}
-    </a>
+    <div style=" text-align: center; font-weight: 500">  
+            <div class="delete-button">
+                <form method="post" action="deleteCargo/">
+                  {% csrf_token %}
+                  
+                  <input type="hidden" name="id_del" value="{{element.id}}">
+                  <button type="submit" name="del_btn">Удалить</button >
+              </form>
+            </div>
+            <a text-align: center, href="{% url 'order_url' element.number %}"><div class="text">{{ element.number}} 
+            </a>
+            
     </div> 
-    <!-- </button> -->
+    
     </div>
-   <!-- <li><img src="https://wiki.bmstu.ru/images/tso/8/84/222_1.jpg"></li> -->
+    <center>
     <img class="order-img" src="{% static element.img %}" weight=300px height=250px alt="My image">
+    </center>
     <div class="cards" >
-    <div class="text" >
+    <div class="text"  >
         <br> Корпус: {{element.corpus}} 
+        <br>
     </div>
     </div>
    

@@ -26,8 +26,10 @@
     background-color: #FFF8DC;
 
   }
-  .text{
+  .text_button{
     font-size: 30px;
+    color: red;
+    background-color: blue;
   }
   .order-list{
     font-size: 30px;
@@ -43,16 +45,19 @@
 
   .button[type="text"]{
     padding: 5px;
+    text-align: center;
     border:1px solid  #FFF8DC;
-    border-radius: 3px;
+    border-radius: 30px;
   }
 
   .button[type="submit"]{
     padding: 5px 10px;
     background-color:  #FFF8DC;
     color: #FFF8DC;
+    text-align: center;
     border: none;
-    border-radius: 3px;
+    border:1px solid  #FFF8DC;
+    border-radius: 30px;
   }
   
   .search[type="text"]{
@@ -66,7 +71,7 @@
     background-color:  #FFF8DC;
     color:#FFF8DC;
     border: none;
-    border-radius: 3px;
+    border-radius: 300px;
   }
 
 a{
