@@ -77,14 +77,25 @@ def GetRoomSearch(request):
 
 def GetRoom(request, id):
     # order = next((sub for sub in room_arr if sub["id"] == id), None)
-    order = Audiences.objects.filter(id=id).first()
+    #order = Audiences.objects.filter(id=id).first()
     orders = Audiences.objects.all()
+    for order in orders:
+        if id == int(order.number):
+            print(order.number)
+            return render(request, 'order.html', {'data': {
+                'number': order.number, 
+                'image' :order.image,
+                'info' : order.info,
+                'status' : order.status,
+                'corpus': order.corpus, 
+                'price' : order.price,
+
+                }})
+            
+        
     # clusters = Orders.objects.filter(cluster=order.cluster)
     input_text = request.GET.get("room")
-    return render(request, 'order.html', {'data' : {
-        'orders': order,
-        'query': input_text,
-    }})
+    return render(request, 'order.html', {'data': {'number': 10, 'corpus': 'fghjk'}})
 
 
 def delObject(request, id):

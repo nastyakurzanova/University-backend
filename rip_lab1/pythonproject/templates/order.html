@@ -4,17 +4,20 @@
 
 {% block title %}Информация{{data.orders.number}} {% endblock %}
 {% block navigation %}
-    <button class="button-style" onclick="location.href='/'" > Вернуться назад </button>
+<button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
+
 {% endblock %}
 {% block content %}
 <div class="text_big"> 
-Информация о аудитории №{{ data.orders.number }}
-<a text-align: center><div class="text">{{ element.number}}
-</a>
-    <li> Корпус: {{data.orders.corpus}} </li> 
-    <li> Инфо: {{data.orders.info}}</li> 
-    <li> Цена: {{data.orders.price}} руб/час</li>
-    
+Информация о аудитории №{{ data.number }}
+
+    <li> Корпус: {{ data.corpus }} </li> 
+    <li> Инфо: {{data.info}}</li> 
+    <li> Цена: {{data.price}} руб/час</li>
+    <button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
+    <a text-align: center, href="'/'"><div class="text">{{element.number}}
+    </a>
+    <button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
     <img class="order-img" src="/pythonproject/static/image/1.jpg" weight=300px height=300px alt="My image">
 {% endblock %}
 
