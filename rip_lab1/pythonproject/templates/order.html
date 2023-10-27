@@ -4,7 +4,7 @@
 
 {% block title %}Информация{{data.orders.number}} {% endblock %}
 {% block navigation %}
-<button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
+<button class="text_big" onclick="location.href=''" > Вернуться назад </button>
 
 {% endblock %}
 {% block content %}
@@ -14,11 +14,12 @@
     <li> Корпус: {{ data.corpus }} </li> 
     <li> Инфо: {{data.info}}</li> 
     <li> Цена: {{data.price}} руб/час</li>
+    <!-- <img class="order-img" src="{% static element.src %}" weight=300px height=250px alt="My image"> -->
     <button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
     <a text-align: center, href="'/'"><div class="text">{{element.number}}
     </a>
     <button class="text_big" onclick="location.href='/'" > Вернуться назад </button>
-    <img class="order-img" src="/pythonproject/static/image/1.jpg" weight=300px height=300px alt="My image">
+    <img class="order-img" src="{% static data.img %}" weight=500px height=500px alt="My image">
 {% endblock %}
 
 </div>

@@ -81,7 +81,6 @@ def GetRoom(request, id):
     orders = Audiences.objects.all()
     for order in orders:
         if id == int(order.number):
-            print(order.number)
             return render(request, 'order.html', {'data': {
                 'number': order.number, 
                 'image' :order.image,
@@ -89,7 +88,7 @@ def GetRoom(request, id):
                 'status' : order.status,
                 'corpus': order.corpus, 
                 'price' : order.price,
-
+                'img' : order.img
                 }})
             
         

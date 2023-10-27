@@ -24,6 +24,7 @@ class Audiences(models.Model):
     number = models.CharField(max_length=50)
     price = models.FloatField()
     image = models.CharField(max_length=100)
+    img = models.CharField(max_length=100)
     info = models.FloatField()
     status = models.CharField(max_length=100)
     corpus = models.CharField(max_length=50)
