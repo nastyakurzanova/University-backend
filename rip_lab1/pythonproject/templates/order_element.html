@@ -4,9 +4,8 @@
             <div class="delete-button">
                 <form method="post" action="deleteCargo/">
                   {% csrf_token %}
-                  
                   <input type="hidden" name="id_del" value="{{element.id}}">
-                  <button type="submit" name="del_btn">Удалить</button >
+                  <button type="submit" style="right: 240px; text-align: right;  color: #8B4513; background-color: #FFEBCD; size: 100px;" name="del_btn">Удалить</button > 
               </form>
             </div>
             <a text-align: center, href="{% url 'order_url' element.number %}"><div class="text">{{ element.number}} 

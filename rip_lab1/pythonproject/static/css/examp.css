@@ -4,7 +4,7 @@
     vertical-align: middle;
     display: flex;
     text-align: center;
-    background-color: #FFF8DC;
+    background-color: #FFEBCD;
   }
   
 
@@ -51,7 +51,7 @@
   }
 
   .button[type="submit"]{
-    padding: 5px 10px;
+    padding: 50px 10px;
     background-color:  #FFF8DC;
     color: #FFF8DC;
     text-align: center;
@@ -72,6 +72,13 @@
     color:#FFF8DC;
     border: none;
     border-radius: 300px;
+  }
+
+  b{
+    font-size: 30px;
+    color: #8B4513;
+    background-color: #FFEBCD;
+    text-decoration: none;
   }
 
 a{

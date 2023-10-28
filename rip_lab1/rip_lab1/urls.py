@@ -10,3 +10,4 @@ urlpatterns = [
    # path('', views.bookList),
     # path('book/<int:id>/', views.GetBook, name='book_url')
 ]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
