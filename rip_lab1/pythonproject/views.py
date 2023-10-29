@@ -52,8 +52,39 @@ room_arr =  [
 #         'query': input_text,
 #         'filter_list': input_filter}})
 
+def GetAllCargo(request):
+    
+    res=[]
+    input_text = request.GET.get("room")
+    data = Audiences.objects.filter(deleted=False)
+    # data = Cargo.objects.filter(is_deleted=False)
+    
+    if input_text is not None:
+        for elem in data:
+            if input_text in elem.number:
+                res.append(elem)
+                #print(elem)
+        return render(
+        request,'orders.html', {'data' : {
+            'items' : res,
+            'input' : input_text
+        } }
+                     )
+    
+    
+    return render(
+            request,'orders.html', {
+                'data' :
+                {
+                    'items' : data
+                }
+            }
+            
+        )
+
+#!!!! работает без удаления
+
 def GetRoomSearch(request):
-    input_filter = request.GET.getlist("manufacturer")
     input_text = request.GET.get("room")
     orders = Audiences.objects.all()
    # orders = orders.filter(status="valid")
@@ -63,6 +94,38 @@ def GetRoomSearch(request):
                 'orders': orders,
                 'query': input_text,
                 }})
+
+def GetRoomSearch(request):
+    res=[]
+    input_text = request.GET.get("room")
+    data = Audiences.objects.filter(deleted=False)
+    # data = Cargo.objects.filter(is_deleted=False)
+    orders = Audiences.objects.all()
+    if input_text is not None:
+        for elem in data:
+            if input_text in elem.number:
+                res.append(elem)
+                #print(elem)
+        return render(
+        request,'orders.html', {'data' : {
+            'items' : res,
+            'input' : input_text,
+            'orders': orders
+            
+        } }
+                     )
+    
+    
+    return render(
+            request,'orders.html', {
+                'data' :
+                {
+                    'items' : data,
+                    'orders': orders
+                }
+            }
+            
+        )
     # for i in room_arr:
     #     if input_text is not None:
     #         if input_text in i['title']:
@@ -113,6 +176,7 @@ def DeleteCurrentCargo(request):
             cursor = conn.cursor()
             cursor.execute(f"update audiences set deleted = true where id = {id_del}")
             conn.commit()   # реальное выполнение команд sql1
+            
             cursor.close()
             conn.close()
         orders = Audiences.objects.all()

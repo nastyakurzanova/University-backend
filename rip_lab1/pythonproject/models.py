@@ -28,6 +28,7 @@ class Audiences(models.Model):
     info = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
     corpus = models.CharField(max_length=50)
+    deleted = models.BooleanField()
     def __str__(self):
         return self.number, self.status
     class Meta:
@@ -37,6 +38,23 @@ class Audiences(models.Model):
         verbose_name = "Аудитория"
         verbose_name_plural = "Аудитории"
 
+
+class Booking_requests(models.Model):
+    status = models.CharField(max_length=10)
+    moderator = models.IntegerField()
+    date_confirmed = models.DateTimeField()
+    date_in_progress = models.DateTimeField()
+    creater = models.IntegerField()
+    date_booling = models.DateTimeField()
+    date_added = models.DateTimeField()
+    def __str__(self):
+        return self.number, self.status
+    class Meta:
+        app_label = 'rip_lab1'
+        managed = False
+        db_table = 'booking_requests' 
+        verbose_name = "Бронивание"
+        verbose_name_plural = "Бронирования"
 #--------
 class Book(models.Model):
     name = models.CharField(max_length=30)
