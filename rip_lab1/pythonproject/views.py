@@ -84,16 +84,16 @@ def GetAllCargo(request):
 
 #!!!! работает без удаления
 
-def GetRoomSearch(request):
-    input_text = request.GET.get("room")
-    orders = Audiences.objects.all()
-   # orders = orders.filter(status="valid")
-    print(input_text)
-    temp_arr = []
-    return render(request, 'orders.html', {'data' : {
-                'orders': orders,
-                'query': input_text,
-                }})
+# def GetRoomSearch(request):
+#     input_text = request.GET.get("room")
+#     orders = Audiences.objects.all()
+#    # orders = orders.filter(status="valid")
+#     print(input_text)
+#     temp_arr = []
+#     return render(request, 'orders.html', {'data' : {
+#                 'orders': orders,
+#                 'query': input_text,
+#                 }})
 
 def GetRoomSearch(request):
     res=[]
@@ -110,8 +110,7 @@ def GetRoomSearch(request):
         request,'orders.html', {'data' : {
             'items' : res,
             'input' : input_text,
-            'orders': orders
-            
+            'orders': data
         } }
                      )
     
@@ -121,7 +120,7 @@ def GetRoomSearch(request):
                 'data' :
                 {
                     'items' : data,
-                    'orders': orders
+                    'orders': data
                 }
             }
             
