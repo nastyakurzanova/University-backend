@@ -50,7 +50,8 @@ def GetRoomSearch(request):
         return render(
         request,'orders.html', {'data' : {
             'items' : res,
-            'input' : input_text,
+            'query': input_text,
+            # 'input' : input_text,
             'orders': res
         } }
                      )
