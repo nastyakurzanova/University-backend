@@ -7,21 +7,15 @@
     
     <form style="background-color: #FFF8DC" action="" method="get">
     <div class="order-text">
-    <!-- http://fn.bmstu.ru/images/footer_fn.png -->
     Аудитории МГТУ{{ data.orders.number}} 
     <img src="/pythonproject/static/image/bmstu.png"/>
     </div> 
 
-        <!-- {% csrf_token %} -->
-        <!-- #переименовать sub -->
   <input style="background-color: 	#ffffff; color: #8B4513" id="text" name="room" type="text" value="{{data.query}}">
   <div class="buttons-container">
     <input  style="background-color: #FFEBCD; color: #8B4513" type="submit" value="Поиск" >
   </div>
 </form>
-   <!-- <input type="submit" value="Поиск" >  -->
-    
-
     {% for order in data.orders %}
         {% include 'order_element.html' with element=order %}
     {% empty %}

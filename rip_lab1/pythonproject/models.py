@@ -30,7 +30,7 @@ class Audiences(models.Model):
     corpus = models.CharField(max_length=50)
     deleted = models.BooleanField()
     def __str__(self):
-        return self.number, self.status
+        return self.number
     class Meta:
         app_label = 'rip_lab1'
         managed = False
