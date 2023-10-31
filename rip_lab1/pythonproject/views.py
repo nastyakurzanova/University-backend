@@ -73,7 +73,8 @@ def DeleteCurrentCargo(request):
         if request.method == 'POST':
             
             id_del = request.POST.get('id_del') 
-            conn = psycopg2.connect(dbname="postgres", host="127.0.0.1", user="student", password="root", port="5432")
+            
+            conn = psycopg2.connect(dbname="postgres", host="127.0.0.1", user="postgres", password="1", port="5432")
             cursor = conn.cursor()
             cursor.execute(f"update audiences set deleted = true where id = {id_del}")
             conn.commit()   # реальное выполнение команд sql1

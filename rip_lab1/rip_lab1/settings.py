@@ -32,8 +32,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'books',
         'NAME': 'audiences',
-        'USER': 'student',
-        'PASSWORD': 'root',
+        'USER': 'postgres',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'DATABASE'
         'PORT': 5432, # Стандартный порт PostgreSQL
@@ -96,8 +96,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'student',
-        'PASSWORD': 'root',
+        'USER': 'postgres',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432, # Стандартный порт PostgreSQL
         # 'OPTIONS': {'charset': 'utf8'},
