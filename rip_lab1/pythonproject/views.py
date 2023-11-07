@@ -53,6 +53,7 @@ def GetRoomSearch(request):
         )
 
 def GetRoom(request, id):
+    # orm
     orders = Audiences.objects.all()
     for order in orders:
         if id == int(order.number):
@@ -68,6 +69,8 @@ def GetRoom(request, id):
     return render(request, 'order.html', {'data': {'number': 10, 'corpus': '98 views.py'}})
 
 
+# post отправляет данные на сервер гет запрашивает, пут изменение/обновление, делит 
+
 @csrf_exempt
 def DeleteCurrentCargo(request):
         if request.method == 'POST':
@@ -75,9 +78,11 @@ def DeleteCurrentCargo(request):
             id_del = request.POST.get('id_del') 
             
             conn = psycopg2.connect(dbname="postgres", host="127.0.0.1", user="postgres", password="1", port="5432")
-            cursor = conn.cursor()
+            cursor = conn.cursor() # возвращает объект cursor для осуществления запросов к бд
             cursor.execute(f"update audiences set deleted = true where id = {id_del}")
             conn.commit()   # реальное выполнение команд sql1
+            
+
             
             cursor.close()
             conn.close()
