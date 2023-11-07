@@ -51,7 +51,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rip_lab1',
-    'pythonproject'
+    'pythonproject',
+
+        # DRF
+    'rest_framework',
+
+    # Наше приложение
+    'stocks',
 ]
 
 MIDDLEWARE = [
