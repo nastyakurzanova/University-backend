@@ -52,12 +52,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rip_lab1',
     'pythonproject',
-
+    'rest_framework.authtoken',
+    'rest_framework.routers',
         # DRF
     'rest_framework',
-
-    # Наше приложение
-    'stocks',
+    'rip_lab1'
 ]
 
 MIDDLEWARE = [
