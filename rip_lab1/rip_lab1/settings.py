@@ -51,7 +51,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rip_lab1',
-    'pythonproject'
+    'pythonproject',
+    'rest_framework.authtoken',
+    'rest_framework.routers',
+        # DRF
+    'rest_framework',
+    'rip_lab1'
 ]
 
 MIDDLEWARE = [

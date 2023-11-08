@@ -46,7 +46,7 @@ class Booking_requests(models.Model):
     date_booling = models.DateTimeField()
     date_added = models.DateTimeField()
     def __str__(self):
-        return self.number, self.status
+        return self.status
     class Meta:
         app_label = 'rip_lab1'
         managed = False
